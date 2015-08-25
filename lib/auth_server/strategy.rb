@@ -2,7 +2,7 @@ module AuthServer
   class Strategy < OmniAuth::Strategies::OAuth2
     option :name, "auth_server"
     option :client_options, {
-      site: "http://localhost:3000"
+      site: Figaro.env.provider_url
     }
 
     uid do
@@ -14,7 +14,7 @@ module AuthServer
     end
 
     def raw_info
-      @raw_info ||= access_token.get('/api/v1/me').parsed
+      @raw_info ||= access_token.get(Figaro.env.provider_credentials_path).parsed
     end
   end
 end

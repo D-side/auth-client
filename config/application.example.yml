@@ -1,0 +1,8 @@
+# Settings for development. For production use HTTPS.
+# May work with OAuth2 providers other than D-side/auth-server, untested
+provider_url: "http://localhost:3000"
+provider_credentials_path: "/api/v1/me"
+
+# Register your client with your OAuth2 provider to get this information
+client_id: "FILL THIS IN"
+client_secret: "FILL THIS IN"

@@ -238,8 +238,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   config.omniauth :auth_server,
-                  '96e23a1629c7f5f902d7676c39a6467207f16bc19a0b60610884e782f1558728',
-                  '8aff21ac10d5c715abfdbade1c84c1d1f846e3b6d93402814bca4f52209bd2d6',
+                  Figaro.env.client_id,
+                  Figaro.env.client_secret,
                   strategy_class: AuthServer::Strategy
 
   # ==> Warden configuration
