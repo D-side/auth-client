@@ -1,0 +1,15 @@
+h1 Auth client
+
+- if user_signed_in?
+  .panel.panel-default
+    .panel-body
+      | Hello, #{current_user.name}!
+    .panel-footer
+      = link_to 'Log out', logout_path, method: :delete, class: 'btn btn-warning'
+- else
+  .panel.panel-default
+    .panel-body
+      em You are not logged in
+    .panel-footer
+      = link_to 'Log in via Facebook', user_omniauth_authorize_path(:auth_server), class: 'btn btn-warning'
+    

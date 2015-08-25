@@ -1,0 +1,25 @@
+# Copy this file to `database.yml` and fill it in. Maybe.
+# When developing, you can copy and use this file as-is. However, make sure to
+# add a user with your OS username in the database.
+# Example:
+#   sudo -u postgres createuser --superuser YOUR_USERNAME_HERE
+# That will make use of (default) peer authentication and a domain socket.
+
+# WARNING: not for production deployments.
+
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: auth_client_development
+
+test:
+  <<: *default
+  database: auth_client_test
+
+production:
+  <<: *default
+  database: auth_client_production
